@@ -1,0 +1,98 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.hover{
+  transition: all 0.40s;
+}
+
+/* Add this CSS to your stylesheet */
+.header-link {
+  position: relative;
+  color: #000;
+  text-decoration: none;
+}
+
+.header-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  display: block;
+  margin-top: 5px;
+  right: 0;
+  background: dodgerblue;
+  transition: width 0.3s ease;
+  -webkit-transition: width 0.3s ease;
+}
+.header-dropdown-link{
+  position: relative;
+  color: #000;
+  text-decoration: none;
+}
+
+.header-dropdown-link::after{
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  display: block;
+  margin-top: 30px;
+  right: 0;
+  background: dodgerblue;
+  transition: width 0.3s ease;
+  -webkit-transition: width 0.3s ease;
+}
+
+.header-dropdown-link:hover::after{
+  width: 100%;
+  left: 0;
+  background: dodgerblue;
+}
+
+
+.header-link:hover::after {
+  width: 100%;
+  left: 0;
+  background: dodgerblue;
+}
+
+.header-dropdown {
+  color: #000;
+  text-decoration: none;
+}
+
+.group:hover .header-dropdown {
+  color: dodgerblue;
+}
+
+.group:hover .dropdown-menu {
+  display: block;
+}
+
+/* Dropdown Menu Styling */
+.dropdown-menu {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+/* Show dropdown smoothly when hovering */
+.group:hover .dropdown-menu {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 1s;
+}
+
+/* Ensuring the dropdown starts hidden */
+.group .dropdown-menu {
+  display: none;
+}
+
+/* Display block on hover to enable visibility with smoothness */
+.group:hover .dropdown-menu {
+  display: block;
+}
