@@ -39,25 +39,22 @@ export default function PatientsFeedBack() {
   const [activeStep, setActiveStep] = React.useState(0);
   const maxSteps = steps.length;
 
-  // Function to go to the next step
   const handleNext = () => {
     setActiveStep((prevActiveStep) => (prevActiveStep + 1) % maxSteps);
   };
 
-  // Function to go to the previous step
   const handleBack = () => {
     setActiveStep(
       (prevActiveStep) => (prevActiveStep - 1 + maxSteps) % maxSteps
     );
   };
 
-  // Automatic step change every 10 seconds
   React.useEffect(() => {
     const interval = setInterval(() => {
       handleNext();
-    }, 2000); // 10 seconds
+    }, 2000);
 
-    return () => clearInterval(interval); // Clean up the interval on component unmount
+    return () => clearInterval(interval);
   }, []);
 
   return (

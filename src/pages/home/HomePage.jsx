@@ -1,6 +1,4 @@
 import Banner from "../../components/banner/Banner";
-import Header from "../../components/header/Header";
-import MainHeader from "../../components/header/MainHeader";
 import PackagesContent from "../../components/packages/PackagesContent";
 import AboutOurServices from "../../components/services/AboutOurServices";
 import ServicesInfo from "../../components/services/ServicesInfo";

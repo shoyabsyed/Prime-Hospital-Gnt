@@ -1,10 +1,8 @@
 import { Button, TextField } from "@mui/material";
-import { FaMapMarkerAlt, FaPhone, FaEnvelope } from "react-icons/fa";
 
 const ContactForm = () => {
   return (
     <div className="flex flex-col lg:flex-row p-4 lg:p-10 gap-8 overflow-hidden">
-      {/* Left Section: Reach Us */}
       <section className="bg-green-600 text-white p-6 lg:p-8 rounded w-full lg:w-1/2">
         <h1 className="text-2xl font-bold mb-4 text-center underline">
           Reach us
@@ -27,7 +25,6 @@ const ContactForm = () => {
         </div>
       </section>
 
-      {/* Right Section: Contact Form */}
       <section className="w-full lg:w-2/3 flex flex-col gap-4">
         <h1 className="text-4xl font-bold mb-4 underline text-center">
           Drop us a message
@@ -80,7 +77,7 @@ const ContactForm = () => {
               backgroundColor: "black",
               color: "white",
               "&:hover": {
-                backgroundColor: "gray", // Optional: Change hover color if needed
+                backgroundColor: "gray",
               },
             }}
             fullWidth
