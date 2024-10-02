@@ -9,14 +9,10 @@ import Packages from "../../components/packages/Packages";
 import AppointmentInfo from "../../components/appointment/AppointmentInfo";
 import AppointmentContact from "../../components/contact/AppointmentContact";
 import PatientsFeedBack from "../../components/custom-components/Stepper";
-import Footer from "../../components/footer/Footer";
-import SubFooter from "../../components/footer/SubFooter";
 
 const HomePage = () => {
   return (
     <div>
-      <Header />
-      <MainHeader />
       <Banner />
       <Services />
       <AboutOurServices />
@@ -28,8 +24,6 @@ const HomePage = () => {
       <div className="flex w-full items-center justify-center p-6">
         <PatientsFeedBack />
       </div>
-      <Footer />
-      <SubFooter />
     </div>
   );
 };
