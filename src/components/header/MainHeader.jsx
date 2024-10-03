@@ -62,203 +62,208 @@ const MainHeader = () => {
   console.log(location.pathname);
   return (
     <header
-      className={`bg-white sticky top-0 w-full shadow-md transition-transform duration-300 z-50 ${
+      className={`main-header w-full bg-white sticky top-0 py-4 shadow-md transition-transform duration-300 z-50 ${
         isHeaderVisible ? "translate-y-0" : "-translate-y-full"
       }`}
     >
-      <div className="flex items-center justify-between px-4 lg:px-8">
-        <img src="Images/logo.png" alt="logo-img" className="w-24 h-auto" />
-        <div className="hidden lg:flex items-center gap-14">
-          <Link
-            to="/"
-            className={`header-link font-semibold ${
-              location.pathname === "/"
-                ? "text-blue-500"
-                : "text-black hover:text-sky-500 hover"
-            }`}
-          >
-            HOME
-          </Link>
-
-          <div className="relative group">
-            <button
-              onClick={() => setAboutOpen(!aboutOpen)}
-              className="header-dropdown-link flex font-semibold items-center gap-2 hover:text-sky-500"
-            >
-              ABOUT <IoMdArrowDropdown />
-            </button>
-            <div
-              className={`absolute ${
-                aboutOpen ? "block" : "hidden"
-              } dropdown-menu bg-white shadow-lg rounded-md w-36 mt-1 transition-all duration-300 ease-in-out`}
-            >
-              <ul className="py-2 w-full">{renderDropdownLinks(aboutLinks)}</ul>
-            </div>
-          </div>
-
-          <div className="relative group">
-            <button
-              onClick={() => setDepartmentsOpen(!departmentsOpen)}
-              className="header-dropdown-link font-semibold flex items-center gap-2 hover:text-sky-500"
-            >
-              DEPARTMENTS <IoMdArrowDropdown />
-            </button>
-            <div
-              className={`absolute ${
-                departmentsOpen ? "block" : "hidden"
-              } dropdown-menu bg-white shadow-lg rounded-md w-52 mt-1 transition-all duration-300 ease-in-out`}
-            >
-              <ul className="py-2 w-full">
-                {renderDropdownLinks(departmentLinks)}
-              </ul>
-            </div>
-          </div>
-
-          <Link
-            to="/facilities"
-            className={`header-link font-semibold hover:text-sky-500 ${
-              location.pathname === "/facilities" ? "text-blue-500" : ""
-            }`}
-          >
-            FACILITIES
-          </Link>
-          <Link
-            to="/gallery"
-            className={`header-link font-semibold hover:text-sky-500 ${
-              location.pathname === "/gallery" ? "text-blue-500" : ""
-            }`}
-          >
-            GALLERY
-          </Link>
-
-          <div className="relative group">
-            <button
-              onClick={() => setMoreOpen(!moreOpen)}
-              className="header-dropdown-link font-semibold flex items-center gap-2 hover:text-sky-500"
-            >
-              MORE <IoMdArrowDropdown />
-            </button>
-            <div
-              className={`absolute ${
-                moreOpen ? "block" : "hidden"
-              } dropdown-menu bg-white shadow-lg rounded-md w-32 mt-1 transition-all duration-300 ease-in-out`}
-            >
-              <ul className="py-2 w-full">{renderDropdownLinks(moreLinks)}</ul>
-            </div>
-          </div>
-
-          <Link
-            to="/contact"
-            className={`header-link hover font-semibold  ${
-              location.pathname === "/contact"
-                ? "text-blue-500"
-                : "text-black hover:text-sky-500"
-            }`}
-          >
-            CONTACT
-          </Link>
-        </div>
-
-        <button
-          className="lg:hidden text-gray-600 hover:text-sky-500"
-          onClick={() => setMenuOpen(!menuOpen)}
-        >
-          <IoMdMenu size={28} />
-        </button>
-      </div>
-
-      <div
-        className={`lg:hidden transition-all duration-300 ease-in-out ${
-          menuOpen ? "max-h-screen" : "max-h-0 overflow-hidden"
-        }`}
-      >
-        <ul className="flex flex-col items-start space-y-2 px-4 py-2 bg-white shadow-md">
-          <li>
+      <div className="container mx-auto">
+        <div className="flex items-center justify-between px-4 lg:px-8">
+          <img src="Images/logo.png" alt="logo-img" className="w-24 h-auto" />
+          <div className="hidden lg:flex items-center gap-14">
             <Link
               to="/"
-              className={`block py-2 hover:text-sky-500 ${
-                location.pathname === "/" ? "text-blue-500" : ""
+              className={`tracking-4 header-link font-semibold ${
+                location.pathname === "/"
+                  ? "text-blue-500"
+                  : "text-black hover:text-sky-500 hover"
               }`}
             >
               HOME
             </Link>
-          </li>
-          <li>
-            <button
-              onClick={() => setAboutOpen(!aboutOpen)}
-              className="flex gap-2 items-center w-full py-2 hover:text-sky-500"
-            >
-              ABOUT <IoMdArrowDropdown />
-            </button>
-            <ul
-              className={`pl-4 transition-all duration-300 ease-in-out ${
-                aboutOpen ? "block" : "hidden"
-              }`}
-            >
-              {renderDropdownLinks(aboutLinks)}
-            </ul>
-          </li>
-          <li>
-            <button
-              onClick={() => setDepartmentsOpen(!departmentsOpen)}
-              className="flex gap-2 items-center w-full py-2 hover:text-sky-500"
-            >
-              DEPARTMENTS <IoMdArrowDropdown />
-            </button>
-            <ul
-              className={`pl-4 transition-all duration-300 ease-in-out ${
-                departmentsOpen ? "block" : "hidden"
-              }`}
-            >
-              {renderDropdownLinks(departmentLinks)}
-            </ul>
-          </li>
-          <li>
+
+            <div className="relative group">
+              <button
+                onClick={() => setAboutOpen(!aboutOpen)}
+                className="tracking-4 header-dropdown-link flex font-semibold items-center gap-2 hover:text-sky-500"
+              >
+                ABOUT <IoMdArrowDropdown />
+              </button>
+              <div
+                className={`absolute ${
+                  aboutOpen ? "block" : "hidden"
+                } dropdown-menu bg-white shadow-lg rounded-md w-36 mt-1 transition-all duration-300 ease-in-out`}
+              >
+                <ul className="py-2 w-full">
+                  {renderDropdownLinks(aboutLinks)}
+                </ul>
+              </div>
+            </div>
+
+            <div className="relative group">
+              <button
+                onClick={() => setDepartmentsOpen(!departmentsOpen)}
+                className="tracking-4 header-dropdown-link font-semibold flex items-center gap-2 hover:text-sky-500"
+              >
+                DEPARTMENTS <IoMdArrowDropdown />
+              </button>
+              <div
+                className={`absolute ${
+                  departmentsOpen ? "block" : "hidden"
+                } dropdown-menu bg-white shadow-lg rounded-md w-52 mt-1 transition-all duration-300 ease-in-out`}
+              >
+                <ul className="py-2 w-full">
+                  {renderDropdownLinks(departmentLinks)}
+                </ul>
+              </div>
+            </div>
+
             <Link
               to="/facilities"
-              className={`block py-2 hover:text-sky-500 ${
+              className={`tracking-4 header-link font-semibold hover:text-sky-500 ${
                 location.pathname === "/facilities" ? "text-blue-500" : ""
               }`}
             >
               FACILITIES
             </Link>
-          </li>
-          <li>
             <Link
               to="/gallery"
-              className={`block py-2 hover:text-sky-500 ${
+              className={`tracking-4 header-link font-semibold hover:text-sky-500 ${
                 location.pathname === "/gallery" ? "text-blue-500" : ""
               }`}
             >
               GALLERY
             </Link>
-          </li>
-          <li>
-            <button
-              onClick={() => setMoreOpen(!moreOpen)}
-              className="flex gap-2 items-center w-full py-2 hover:text-sky-500"
-            >
-              MORE <IoMdArrowDropdown />
-            </button>
-            <ul
-              className={`pl-4 transition-all duration-300 ease-in-out ${
-                moreOpen ? "block" : "hidden"
-              }`}
-            >
-              {renderDropdownLinks(moreLinks)}
-            </ul>
-          </li>
-          <li>
+
+            <div className="relative group">
+              <button
+                onClick={() => setMoreOpen(!moreOpen)}
+                className="tracking-4 header-dropdown-link font-semibold flex items-center gap-2 hover:text-sky-500"
+              >
+                MORE <IoMdArrowDropdown />
+              </button>
+              <div
+                className={`absolute ${
+                  moreOpen ? "block" : "hidden"
+                } dropdown-menu bg-white shadow-lg rounded-md w-32 mt-1 transition-all duration-300 ease-in-out`}
+              >
+                <ul className="py-2 w-full">
+                  {renderDropdownLinks(moreLinks)}
+                </ul>
+              </div>
+            </div>
+
             <Link
               to="/contact"
-              className={`block py-2 hover:text-sky-500 ${
-                location.pathname === "/contact" ? "text-blue-500" : ""
+              className={`tracking-4 header-link hover font-semibold  ${
+                location.pathname === "/contact"
+                  ? "text-blue-500"
+                  : "text-black hover:text-sky-500"
               }`}
             >
               CONTACT
             </Link>
-          </li>
-        </ul>
+          </div>
+
+          <button
+            className="lg:hidden text-gray-600 hover:text-sky-500"
+            onClick={() => setMenuOpen(!menuOpen)}
+          >
+            <IoMdMenu size={28} />
+          </button>
+        </div>
+        <div
+          className={`lg:hidden transition-all duration-300 ease-in-out ${
+            menuOpen ? "max-h-screen" : "max-h-0 overflow-hidden"
+          }`}
+        >
+          <ul className="flex flex-col items-start space-y-2 px-4 py-2 bg-white shadow-md">
+            <li>
+              <Link
+                to="/"
+                className={`block py-2 hover:text-sky-500 ${
+                  location.pathname === "/" ? "text-blue-500" : ""
+                }`}
+              >
+                HOME
+              </Link>
+            </li>
+            <li>
+              <button
+                onClick={() => setAboutOpen(!aboutOpen)}
+                className="flex gap-2 items-center w-full py-2 hover:text-sky-500"
+              >
+                ABOUT <IoMdArrowDropdown />
+              </button>
+              <ul
+                className={`pl-4 transition-all duration-300 ease-in-out ${
+                  aboutOpen ? "block" : "hidden"
+                }`}
+              >
+                {renderDropdownLinks(aboutLinks)}
+              </ul>
+            </li>
+            <li>
+              <button
+                onClick={() => setDepartmentsOpen(!departmentsOpen)}
+                className="flex gap-2 items-center w-full py-2 hover:text-sky-500"
+              >
+                DEPARTMENTS <IoMdArrowDropdown />
+              </button>
+              <ul
+                className={`pl-4 transition-all duration-300 ease-in-out ${
+                  departmentsOpen ? "block" : "hidden"
+                }`}
+              >
+                {renderDropdownLinks(departmentLinks)}
+              </ul>
+            </li>
+            <li>
+              <Link
+                to="/facilities"
+                className={`block py-2 hover:text-sky-500 ${
+                  location.pathname === "/facilities" ? "text-blue-500" : ""
+                }`}
+              >
+                FACILITIES
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/gallery"
+                className={`block py-2 hover:text-sky-500 ${
+                  location.pathname === "/gallery" ? "text-blue-500" : ""
+                }`}
+              >
+                GALLERY
+              </Link>
+            </li>
+            <li>
+              <button
+                onClick={() => setMoreOpen(!moreOpen)}
+                className="flex gap-2 items-center w-full py-2 hover:text-sky-500"
+              >
+                MORE <IoMdArrowDropdown />
+              </button>
+              <ul
+                className={`pl-4 transition-all duration-300 ease-in-out ${
+                  moreOpen ? "block" : "hidden"
+                }`}
+              >
+                {renderDropdownLinks(moreLinks)}
+              </ul>
+            </li>
+            <li>
+              <Link
+                to="/contact"
+                className={`block py-2 hover:text-sky-500 ${
+                  location.pathname === "/contact" ? "text-blue-500" : ""
+                }`}
+              >
+                CONTACT
+              </Link>
+            </li>
+          </ul>
+        </div>
       </div>
     </header>
   );

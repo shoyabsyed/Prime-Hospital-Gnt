@@ -12,15 +12,16 @@
 .header-link {
   position: relative;
   text-decoration: none;
+  font-size: 17px;
 }
 
 .header-link::after {
   content: '';
   position: absolute;
   width: 0;
-  height: 2px;
+  height: 3px;
   display: block;
-  margin-top: 5px;
+  margin-top: 10px;
   right: 0;
   background: dodgerblue;
   transition: width 0.3s ease;
@@ -89,6 +90,7 @@
 /* Ensuring the dropdown starts hidden */
 .group .dropdown-menu {
   display: none;
+  /* margin-top: 20px; */
 }
 
 /* Display block on hover to enable visibility with smoothness */
