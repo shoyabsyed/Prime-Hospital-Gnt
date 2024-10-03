@@ -10,7 +10,7 @@ const ContactPage = () => {
         imagePath="Images/contactInnerBanner.png"
       />
       <section className="w-full flex flex-col items-center justify-center">
-        <div className="w-full md:w-[60rem]">
+        <div className="w-full md:w-[70rem]">
           <ContactForm />
         </div>
         <Location />

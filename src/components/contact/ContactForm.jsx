@@ -2,8 +2,8 @@ import { Button, TextField } from "@mui/material";
 
 const ContactForm = () => {
   return (
-    <div className="flex flex-col lg:flex-row p-4 lg:p-10 gap-8 overflow-hidden">
-      <section className="bg-green-600 text-white p-6 lg:p-8 rounded w-full lg:w-1/2">
+    <div className="flex flex-col lg:flex-row p-4 lg:p-10 gap-8  overflow-hidden">
+      <section className="bg-green-600 text-white p-6 lg:p-8 rounded w-full lg:w-[32rem]">
         <h1 className="text-2xl font-bold mb-4 text-center underline">
           Reach us
         </h1>
@@ -80,7 +80,6 @@ const ContactForm = () => {
                 backgroundColor: "gray",
               },
             }}
-            fullWidth
           >
             Submit
           </Button>

@@ -77,7 +77,7 @@ const MainHeader = () => {
                 : "text-black hover:text-sky-500 hover"
             }`}
           >
-            Home
+            HOME
           </Link>
 
           <div className="relative group">
@@ -85,7 +85,7 @@ const MainHeader = () => {
               onClick={() => setAboutOpen(!aboutOpen)}
               className="header-dropdown-link flex font-semibold items-center gap-2 hover:text-sky-500"
             >
-              About <IoMdArrowDropdown />
+              ABOUT <IoMdArrowDropdown />
             </button>
             <div
               className={`absolute ${
@@ -101,7 +101,7 @@ const MainHeader = () => {
               onClick={() => setDepartmentsOpen(!departmentsOpen)}
               className="header-dropdown-link font-semibold flex items-center gap-2 hover:text-sky-500"
             >
-              Departments <IoMdArrowDropdown />
+              DEPARTMENTS <IoMdArrowDropdown />
             </button>
             <div
               className={`absolute ${
@@ -120,7 +120,7 @@ const MainHeader = () => {
               location.pathname === "/facilities" ? "text-blue-500" : ""
             }`}
           >
-            Facilities
+            FACILITIES
           </Link>
           <Link
             to="/gallery"
@@ -128,7 +128,7 @@ const MainHeader = () => {
               location.pathname === "/gallery" ? "text-blue-500" : ""
             }`}
           >
-            Gallery
+            GALLERY
           </Link>
 
           <div className="relative group">
@@ -136,7 +136,7 @@ const MainHeader = () => {
               onClick={() => setMoreOpen(!moreOpen)}
               className="header-dropdown-link font-semibold flex items-center gap-2 hover:text-sky-500"
             >
-              More <IoMdArrowDropdown />
+              MORE <IoMdArrowDropdown />
             </button>
             <div
               className={`absolute ${
@@ -155,7 +155,7 @@ const MainHeader = () => {
                 : "text-black hover:text-sky-500"
             }`}
           >
-            Contact
+            CONTACT
           </Link>
         </div>
 
@@ -180,7 +180,7 @@ const MainHeader = () => {
                 location.pathname === "/" ? "text-blue-500" : ""
               }`}
             >
-              Home
+              HOME
             </Link>
           </li>
           <li>
@@ -188,7 +188,7 @@ const MainHeader = () => {
               onClick={() => setAboutOpen(!aboutOpen)}
               className="flex gap-2 items-center w-full py-2 hover:text-sky-500"
             >
-              About <IoMdArrowDropdown />
+              ABOUT <IoMdArrowDropdown />
             </button>
             <ul
               className={`pl-4 transition-all duration-300 ease-in-out ${
@@ -203,7 +203,7 @@ const MainHeader = () => {
               onClick={() => setDepartmentsOpen(!departmentsOpen)}
               className="flex gap-2 items-center w-full py-2 hover:text-sky-500"
             >
-              Departments <IoMdArrowDropdown />
+              DEPARTMENTS <IoMdArrowDropdown />
             </button>
             <ul
               className={`pl-4 transition-all duration-300 ease-in-out ${
@@ -220,7 +220,7 @@ const MainHeader = () => {
                 location.pathname === "/facilities" ? "text-blue-500" : ""
               }`}
             >
-              Facilities
+              FACILITIES
             </Link>
           </li>
           <li>
@@ -230,7 +230,7 @@ const MainHeader = () => {
                 location.pathname === "/gallery" ? "text-blue-500" : ""
               }`}
             >
-              Gallery
+              GALLERY
             </Link>
           </li>
           <li>
@@ -238,7 +238,7 @@ const MainHeader = () => {
               onClick={() => setMoreOpen(!moreOpen)}
               className="flex gap-2 items-center w-full py-2 hover:text-sky-500"
             >
-              More <IoMdArrowDropdown />
+              MORE <IoMdArrowDropdown />
             </button>
             <ul
               className={`pl-4 transition-all duration-300 ease-in-out ${
@@ -255,7 +255,7 @@ const MainHeader = () => {
                 location.pathname === "/contact" ? "text-blue-500" : ""
               }`}
             >
-              Contact
+              CONTACT
             </Link>
           </li>
         </ul>
