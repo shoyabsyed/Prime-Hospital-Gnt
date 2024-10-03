@@ -11,30 +11,42 @@ const MainHeader = () => {
 
   const location = useLocation();
 
-  const aboutLinks = ["Chairman", "Hospital", "Doctors Team"];
-  const departmentLinks = [
-    "General Medicine",
-    "Cardiology",
-    "Neurosurgery",
-    "Pulmonology",
-    "Urology",
-    "Gynaecology",
-    "Pediatrics",
-    "ENT",
-    "Ophthalmology",
-    "Radiology",
-    "Orthopedic",
-    "Anesthesiology",
-    "Cardiothoracic Surgery",
+  const aboutLinks = [
+    { name: "Chairman", path: "/about/chairman" },
+    { name: "Hospital", path: "/about/hospital" },
+    { name: "Doctors Team", path: "/about/doctors-team" },
   ];
-  const moreLinks = ["Testimonials", "Blog"];
+
+  const departmentLinks = [
+    { name: "General Medicine", path: "/departments/general-medicine" },
+    { name: "Cardiology", path: "/departments/cardiology" },
+    { name: "Neurosurgery", path: "/departments/neurosurgery" },
+    { name: "Pulmonology", path: "/departments/pulmonology" },
+    { name: "Urology", path: "/departments/urology" },
+    { name: "Gynaecology", path: "/departments/gynaecology" },
+    { name: "Pediatrics", path: "/departments/pediatrics" },
+    { name: "ENT", path: "/departments/ent" },
+    { name: "Ophthalmology", path: "/departments/ophthalmology" },
+    { name: "Radiology", path: "/departments/radiology" },
+    { name: "Orthopedic", path: "/departments/orthopedic" },
+    { name: "Anesthesiology", path: "/departments/anesthesiology" },
+    {
+      name: "Cardiothoracic Surgery",
+      path: "/departments/cardiothoracic-surgery",
+    },
+  ];
+
+  const moreLinks = [
+    { name: "Testimonials", path: "/more/testimonials" },
+    { name: "Blog", path: "/more/blog" },
+  ];
 
   const renderDropdownLinks = (links) =>
     links.map((link, index) => (
       <li key={index}>
-        <Link to="#" className="block px-4 py-2 hover:text-sky-500">
+        <Link to={link.path} className="block px-4 py-2 hover:text-sky-500">
           <IoMdRemove className="inline-block mr-2 md:hidden" />
-          {link}
+          {link.name}
         </Link>
       </li>
     ));
@@ -67,7 +79,7 @@ const MainHeader = () => {
       }`}
     >
       <div className="flex items-center justify-between px-4 lg:px-8">
-        <img src="Images/logo.png" alt="logo-img" className="w-24 h-auto" />
+        <img src="/Images/logo.png" alt="logo-img" className="w-24 h-auto" />
         <div className="hidden lg:flex items-center gap-14">
           <Link
             to="/"

@@ -8,13 +8,13 @@ const servicesData = [
     description:
       "Expert general medicine care for all your primary health needs.",
     imageSrc: "Images/firstAidImage.png",
-    link: "#",
+    link: "/departments/general-medicine",
   },
   {
     title: "Cardiology",
     description: "Advanced cardiology care for a healthier heart.",
     imageSrc: "Images/heartLogo.png",
-    link: "#",
+    link: "/departments/cardiology",
   },
   {
     title: "Neurosurgery",

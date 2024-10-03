@@ -17,11 +17,11 @@ const ContactForm = () => {
         </div>
         <div className="mb-4">
           <h1 className="text-xl font-bold flex items-center mb-1">Phone</h1>
-          <p>0863-2222279, 2222259, 79954 67346</p>
+          <p>+91 9505544220</p>
         </div>
         <div>
           <h1 className="text-xl font-bold flex items-center mb-1">Email</h1>
-          <p>contact@andhraprimehospitals.com</p>
+          <p>andhraprimeh@gmail.com</p>
         </div>
       </section>
 
