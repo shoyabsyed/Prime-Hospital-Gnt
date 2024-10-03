@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const CountUp = ({ targetNumber, duration, startCounting }) => {
   const [count, setCount] = useState(0);
@@ -68,9 +69,11 @@ const AppointmentInfo = () => {
           excellence and innovation makes us the top choice for exceptional
           care.
         </p>
-        <button className="w-48 lg:w-52 mt-4 border border-white text-center font-bold rounded py-2 hover:bg-green-600">
-          Book an Appointment
-        </button>
+        <Link to="/contact">
+          <button className="w-48 lg:w-52 mt-4 border border-white text-center font-bold rounded py-2 hover:bg-green-600">
+            Book an Appointment
+          </button>
+        </Link>
       </section>
 
       <section className="grid grid-cols-2 gap-4 w-full lg:w-[25rem] mt-8 lg:mt-0">

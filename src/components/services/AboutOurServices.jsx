@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const AboutOurServices = () => {
   return (
     <div className="flex flex-col-reverse md:grid md:grid-cols-2 bg-white w-full items-center justify-center px-6 md:px-36 py-4">
@@ -13,9 +15,11 @@ const AboutOurServices = () => {
           medical technology and skilled specialists. Experience exceptional and
           compassionate care for all your health needs.
         </p>
-        <button className="w-48 py-2 text-center text-white bg-green-600 hover:bg-emerald-300 hover:-translate-y-2 rounded transition-transform duration-300 hover">
-          Book an Appointment
-        </button>
+        <Link to="/contact">
+          <button className="w-48 py-2 text-center text-white bg-green-600 hover:bg-emerald-300 hover:-translate-y-2 rounded transition-transform duration-300 hover">
+            Book an Appointment
+          </button>
+        </Link>
       </section>
       <div className="w-full flex justify-center md:justify-end mb-6 md:mb-0">
         <img

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { IoMdArrowDropdown, IoMdMenu, IoMdRemove } from "react-icons/io";
+import { Link, useLocation } from "react-router-dom/cjs/react-router-dom.min";
 
 const MainHeader = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -7,6 +8,8 @@ const MainHeader = () => {
   const [departmentsOpen, setDepartmentsOpen] = useState(false);
   const [moreOpen, setMoreOpen] = useState(false);
   const [isHeaderVisible, setIsHeaderVisible] = useState(true);
+
+  const location = useLocation();
 
   const aboutLinks = ["Chairman", "Hospital", "Doctors Team"];
   const departmentLinks = [
@@ -29,24 +32,21 @@ const MainHeader = () => {
   const renderDropdownLinks = (links) =>
     links.map((link, index) => (
       <li key={index}>
-        <a href="#" className="block px-4 py-2 hover hover:text-sky-500">
+        <Link to="#" className="block px-4 py-2 hover:text-sky-500">
           <IoMdRemove className="inline-block mr-2 md:hidden" />
           {link}
-        </a>
+        </Link>
       </li>
     ));
 
-  // Handle scroll event
   useEffect(() => {
     let lastScrollY = window.scrollY;
 
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
       if (currentScrollY > lastScrollY) {
-        // Scrolling down
         setIsHeaderVisible(false);
       } else {
-        // Scrolling up
         setIsHeaderVisible(true);
       }
       lastScrollY = currentScrollY;
@@ -59,33 +59,38 @@ const MainHeader = () => {
     };
   }, []);
 
+  console.log(location.pathname);
   return (
     <header
-      className={`bg-white sticky top-0  w-full shadow-md transition-transform duration-300 z-50 ${
+      className={`bg-white sticky top-0 w-full shadow-md transition-transform duration-300 z-50 ${
         isHeaderVisible ? "translate-y-0" : "-translate-y-full"
       }`}
     >
       <div className="flex items-center justify-between px-4 lg:px-8">
         <img src="Images/logo.png" alt="logo-img" className="w-24 h-auto" />
         <div className="hidden lg:flex items-center gap-14">
-          <a
-            href="#"
-            className="header-link font-semibold hover hover:text-sky-500"
+          <Link
+            to="/"
+            className={`header-link font-semibold ${
+              location.pathname === "/"
+                ? "text-blue-500"
+                : "text-black hover:text-sky-500 hover"
+            }`}
           >
-            Home
-          </a>
+            HOME
+          </Link>
 
           <div className="relative group">
             <button
               onClick={() => setAboutOpen(!aboutOpen)}
-              className="header-dropdown-link flex font-semibold items-center gap-2 hover hover:text-sky-500"
+              className="header-dropdown-link flex font-semibold items-center gap-2 hover:text-sky-500"
             >
-              About <IoMdArrowDropdown />
+              ABOUT <IoMdArrowDropdown />
             </button>
             <div
               className={`absolute ${
                 aboutOpen ? "block" : "hidden"
-              } dropdown-menu bg-white shadow-lg  rounded-md w-36 mt-1 transition-all duration-300 ease-in-out`}
+              } dropdown-menu bg-white shadow-lg rounded-md w-36 mt-1 transition-all duration-300 ease-in-out`}
             >
               <ul className="py-2 w-full">{renderDropdownLinks(aboutLinks)}</ul>
             </div>
@@ -94,9 +99,9 @@ const MainHeader = () => {
           <div className="relative group">
             <button
               onClick={() => setDepartmentsOpen(!departmentsOpen)}
-              className="header-dropdown-link font-semibold flex items-center gap-2 hover hover:text-sky-500"
+              className="header-dropdown-link font-semibold flex items-center gap-2 hover:text-sky-500"
             >
-              Departments <IoMdArrowDropdown />
+              DEPARTMENTS <IoMdArrowDropdown />
             </button>
             <div
               className={`absolute ${
@@ -109,25 +114,29 @@ const MainHeader = () => {
             </div>
           </div>
 
-          <a
-            href="#"
-            className="header-link font-semibold hover:text-sky-500 hover"
+          <Link
+            to="/facilities"
+            className={`header-link font-semibold hover:text-sky-500 ${
+              location.pathname === "/facilities" ? "text-blue-500" : ""
+            }`}
           >
-            Facilities
-          </a>
-          <a
-            href="#"
-            className="header-link font-semibold hover:text-sky-500 hover"
+            FACILITIES
+          </Link>
+          <Link
+            to="/gallery"
+            className={`header-link font-semibold hover:text-sky-500 ${
+              location.pathname === "/gallery" ? "text-blue-500" : ""
+            }`}
           >
-            Gallery
-          </a>
+            GALLERY
+          </Link>
 
           <div className="relative group">
             <button
               onClick={() => setMoreOpen(!moreOpen)}
-              className="header-dropdown-link font-semibold flex items-center gap-2 hover hover:text-sky-500"
+              className="header-dropdown-link font-semibold flex items-center gap-2 hover:text-sky-500"
             >
-              More <IoMdArrowDropdown />
+              MORE <IoMdArrowDropdown />
             </button>
             <div
               className={`absolute ${
@@ -138,16 +147,20 @@ const MainHeader = () => {
             </div>
           </div>
 
-          <a
-            href="#"
-            className="header-link hover font-semibold hover:text-sky-500"
+          <Link
+            to="/contact"
+            className={`header-link hover font-semibold  ${
+              location.pathname === "/contact"
+                ? "text-blue-500"
+                : "text-black hover:text-sky-500"
+            }`}
           >
-            Contact
-          </a>
+            CONTACT
+          </Link>
         </div>
 
         <button
-          className="lg:hidden text-gray-600 hover hover:text-sky-500"
+          className="lg:hidden text-gray-600 hover:text-sky-500"
           onClick={() => setMenuOpen(!menuOpen)}
         >
           <IoMdMenu size={28} />
@@ -161,16 +174,21 @@ const MainHeader = () => {
       >
         <ul className="flex flex-col items-start space-y-2 px-4 py-2 bg-white shadow-md">
           <li>
-            <a href="#" className="block py-2 hover:text-sky-500 hover">
-              Home
-            </a>
+            <Link
+              to="/"
+              className={`block py-2 hover:text-sky-500 ${
+                location.pathname === "/" ? "text-blue-500" : ""
+              }`}
+            >
+              HOME
+            </Link>
           </li>
           <li>
             <button
               onClick={() => setAboutOpen(!aboutOpen)}
-              className="flex gap-2 items-center w-full py-2 hover:text-sky-500 hover"
+              className="flex gap-2 items-center w-full py-2 hover:text-sky-500"
             >
-              About <IoMdArrowDropdown />
+              ABOUT <IoMdArrowDropdown />
             </button>
             <ul
               className={`pl-4 transition-all duration-300 ease-in-out ${
@@ -183,9 +201,9 @@ const MainHeader = () => {
           <li>
             <button
               onClick={() => setDepartmentsOpen(!departmentsOpen)}
-              className="flex gap-2 items-center w-full py-2 hover:text-sky-500 hover"
+              className="flex gap-2 items-center w-full py-2 hover:text-sky-500"
             >
-              Departments <IoMdArrowDropdown />
+              DEPARTMENTS <IoMdArrowDropdown />
             </button>
             <ul
               className={`pl-4 transition-all duration-300 ease-in-out ${
@@ -196,21 +214,31 @@ const MainHeader = () => {
             </ul>
           </li>
           <li>
-            <a href="#" className="block py-2 hover:text-sky-500 hover">
-              Facilities
-            </a>
+            <Link
+              to="/facilities"
+              className={`block py-2 hover:text-sky-500 ${
+                location.pathname === "/facilities" ? "text-blue-500" : ""
+              }`}
+            >
+              FACILITIES
+            </Link>
           </li>
           <li>
-            <a href="#" className="block py-2 hover:text-sky-500 hover">
-              Gallery
-            </a>
+            <Link
+              to="/gallery"
+              className={`block py-2 hover:text-sky-500 ${
+                location.pathname === "/gallery" ? "text-blue-500" : ""
+              }`}
+            >
+              GALLERY
+            </Link>
           </li>
           <li>
             <button
               onClick={() => setMoreOpen(!moreOpen)}
-              className="flex gap-2 items-center w-full py-2 hover:text-sky-500 hover"
+              className="flex gap-2 items-center w-full py-2 hover:text-sky-500"
             >
-              More <IoMdArrowDropdown />
+              MORE <IoMdArrowDropdown />
             </button>
             <ul
               className={`pl-4 transition-all duration-300 ease-in-out ${
@@ -221,9 +249,14 @@ const MainHeader = () => {
             </ul>
           </li>
           <li>
-            <a href="#" className="block py-2 hover:text-sky-500 hover">
-              Contact
-            </a>
+            <Link
+              to="/contact"
+              className={`block py-2 hover:text-sky-500 ${
+                location.pathname === "/contact" ? "text-blue-500" : ""
+              }`}
+            >
+              CONTACT
+            </Link>
           </li>
         </ul>
       </div>

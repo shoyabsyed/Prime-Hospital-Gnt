@@ -159,11 +159,10 @@ const Packages = () => {
         </p>
       </motion.div>
 
-      {/* Stepper Section */}
       <motion.div
         ref={stepperRef}
         className="p-4 md:p-8 w-full md:w-[28rem]"
-        initial={{ x: 100, opacity: 0 }} // Slide in from right
+        initial={{ x: 100, opacity: 0 }}
         animate={
           isStepperInView ? { x: 0, opacity: 1 } : { x: 100, opacity: 0 }
         }

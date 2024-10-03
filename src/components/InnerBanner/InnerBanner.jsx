@@ -1,25 +1,28 @@
-import React from 'react'
+import React from "react";
+import { motion } from "framer-motion";
 
-export default function InnerBanner(props) {
-    return (
-        <section className='elementor-section'>
-            <div
-                 style={{
-                    backgroundImage: `url(${props?.imagePath})`,
-                    backgroundRepeat: "no-repeat",
-                    backgroundSize: "cover",
-                    backgroundPosition: "center center",
-                    padding: '130px 0',
-                    textAlign: 'center',
-                    fontSize: '60px',
-                    fontWeight: '900',
-                    lineHeight: '1.5em',
-                    fontFamily: "Playfair Display Sans-serif", 
-                    color: "#fff"
-                  }}
-            >
-                {props?.heading}
-            </div>
-        </section>
-    )
+export default function InnerBanner({ imagePath = "", heading = "" }) {
+  return (
+    <section className="elementor-section">
+      <div
+        className="relative bg-cover bg-center bg-no-repeat py-20 lg:py-20 text-center text-white font-bold"
+        style={{
+          backgroundImage: `url(${imagePath})`,
+          fontSize: "50px",
+          fontFamily: "Playfair Display, sans-serif",
+        }}
+      >
+        <div className="absolute inset-0 bg-gray-900 bg-opacity-70 z-1"></div>
+
+        <motion.div
+          className="relative z-2"
+          initial={{ opacity: 0, y: 100 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, ease: "easeOut" }}
+        >
+          {heading}
+        </motion.div>
+      </div>
+    </section>
+  );
 }
