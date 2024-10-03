@@ -3,7 +3,7 @@ import { IoMail } from "react-icons/io5";
 
 const Header = () => {
   return (
-    <div className="bg-green-600 text-white flex flex-col md:flex-row text-sm md:text-medium md:p-4 items-center justify-around p-2">
+    <div className="bg-green-600 text-white flex flex-col md:flex-row text-md md:text-medium md:p-4 items-center justify-around p-2">
       <section className="flex flex-col md:flex-row items-center gap-5">
         <a
           href="tel:+91-9505544220"

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { IoMdArrowDropdown, IoMdMenu, IoMdRemove } from "react-icons/io";
-import { Link, useLocation } from "react-router-dom/cjs/react-router-dom.min";
+import { Link, useLocation } from "react-router-dom";
 
 const MainHeader = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -71,10 +71,9 @@ const MainHeader = () => {
     };
   }, []);
 
-  console.log(location.pathname);
   return (
     <header
-      className={`bg-white sticky top-0 w-full shadow-md transition-transform duration-300 z-50 ${
+      className={`main-header w-full bg-white sticky top-0 py-4 shadow-md transition-transform duration-300 z-50 ${
         isHeaderVisible ? "translate-y-0" : "-translate-y-full"
       }`}
     >
@@ -86,7 +85,7 @@ const MainHeader = () => {
             className={`header-link font-semibold ${
               location.pathname === "/"
                 ? "text-blue-500"
-                : "text-black hover:text-sky-500 hover"
+                : "text-black hover:text-sky-500"
             }`}
           >
             HOME
@@ -95,7 +94,7 @@ const MainHeader = () => {
           <div className="relative group">
             <button
               onClick={() => setAboutOpen(!aboutOpen)}
-              className="header-dropdown-link flex font-semibold items-center gap-2 hover:text-sky-500"
+              className="tracking-4 header-dropdown-link flex font-semibold items-center gap-2 hover:text-sky-500"
             >
               ABOUT <IoMdArrowDropdown />
             </button>
@@ -111,7 +110,7 @@ const MainHeader = () => {
           <div className="relative group">
             <button
               onClick={() => setDepartmentsOpen(!departmentsOpen)}
-              className="header-dropdown-link font-semibold flex items-center gap-2 hover:text-sky-500"
+              className="tracking-4 header-dropdown-link font-semibold flex items-center gap-2 hover:text-sky-500"
             >
               DEPARTMENTS <IoMdArrowDropdown />
             </button>
@@ -128,7 +127,7 @@ const MainHeader = () => {
 
           <Link
             to="/facilities"
-            className={`header-link font-semibold hover:text-sky-500 ${
+            className={`tracking-4 header-link font-semibold hover:text-sky-500 ${
               location.pathname === "/facilities" ? "text-blue-500" : ""
             }`}
           >
@@ -136,7 +135,7 @@ const MainHeader = () => {
           </Link>
           <Link
             to="/gallery"
-            className={`header-link font-semibold hover:text-sky-500 ${
+            className={`tracking-4 header-link font-semibold hover:text-sky-500 ${
               location.pathname === "/gallery" ? "text-blue-500" : ""
             }`}
           >
@@ -146,7 +145,7 @@ const MainHeader = () => {
           <div className="relative group">
             <button
               onClick={() => setMoreOpen(!moreOpen)}
-              className="header-dropdown-link font-semibold flex items-center gap-2 hover:text-sky-500"
+              className="tracking-4 header-dropdown-link font-semibold flex items-center gap-2 hover:text-sky-500"
             >
               MORE <IoMdArrowDropdown />
             </button>
@@ -161,7 +160,7 @@ const MainHeader = () => {
 
           <Link
             to="/contact"
-            className={`header-link hover font-semibold  ${
+            className={`tracking-4 header-link hover font-semibold  ${
               location.pathname === "/contact"
                 ? "text-blue-500"
                 : "text-black hover:text-sky-500"
