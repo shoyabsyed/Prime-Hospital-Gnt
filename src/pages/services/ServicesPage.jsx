@@ -54,13 +54,13 @@ const servicesData = [
     description:
       "Expert ophthalmology care for comprehensive eye health and vision.",
     imageSrc: "Images/eyeLogo.png",
-    link: "#",
+    link: "/departments/ophthalmology",
   },
   {
     title: "Radiology",
     description: "Precision radiology for accurate diagnostics and imaging.",
     imageSrc: "Images/ctScanLogo.png",
-    link: "#",
+    link: "/departments/radiology",
   },
   {
     title: "Gynaecology",
@@ -79,7 +79,7 @@ const servicesData = [
     title: "Anesthesiology",
     description: "Anesthesiology care for safe and effective pain management.",
     imageSrc: "Images/medicalLogo2.png",
-    link: "#",
+    link: "/departments/orthopedic",
   },
 ];
 const ServicesPage = () => {
@@ -92,7 +92,7 @@ const ServicesPage = () => {
     description:
       "Advanced cardiothoracic surgery for exceptional heart and lung care.",
     imageSrc: "Images/cardiologyLogo.png",
-    link: "#",
+    link: "/departments/cardiothoracic-surgery",
   };
 
   return (
