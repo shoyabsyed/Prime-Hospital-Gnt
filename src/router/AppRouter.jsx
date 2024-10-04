@@ -4,6 +4,7 @@ import ContactPage from "../pages/contact/ContactPage";
 import ServicesPage from "../pages/services/ServicesPage";
 import GeneralMedicinePage from "../pages/departments/generalMedicine/GeneralMedicinePage";
 import Cardiology from "../pages/departments/cardiology/Cardiology";
+import EntSymptoms from "../pages/departments/ent/Ent";
 
 const AppRouter = () => {
   return (
@@ -17,6 +18,7 @@ const AppRouter = () => {
         component={GeneralMedicinePage}
       />
       <Route exact path="/departments/cardiology" component={Cardiology} />
+      <Route exact path="/departments/ent" component={EntSymptoms} />
     </Switch>
   );
 };
