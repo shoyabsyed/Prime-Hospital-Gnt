@@ -1,4 +1,3 @@
-import { FaFacebookF, FaInstagram, FaYoutube } from "react-icons/fa";
 import {
   MdMailOutline,
   MdOutlineCall,
@@ -90,7 +89,7 @@ const Footer = () => {
             We're here to help you
           </h1>
           <img
-            src="Images/hoursLogo.png"
+            src="/Images/hoursLogo.png"
             alt="hours-logo"
             className="mx-auto"
             width={100}

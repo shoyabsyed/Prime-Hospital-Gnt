@@ -10,6 +10,7 @@ import UrologyPage from "../pages/departments/urology/UrologyPage";
 import NeurosurgeryPage from "../pages/departments/neurologist/NeurologistPage";
 import PediatricsPage from "../pages/departments/pediatrics/PediatricsPage";
 import GynaecologyPage from "../pages/departments/gynaecology/GynaecologyPage";
+import OrthopedicPage from "../pages/departments/orthopedic/OrthopedicPage";
 
 const AppRouter = () => {
   return (
@@ -41,6 +42,7 @@ const AppRouter = () => {
         path="/departments/gynaecology"
         component={GynaecologyPage}
       />
+      <Route exact path="/departments/orthopedic" component={OrthopedicPage} />
     </Switch>
   );
 };

@@ -73,7 +73,7 @@ const servicesData = [
     description:
       "Expert orthopedic care for optimal musculoskeletal health and recovery.",
     imageSrc: "Images/physicalTheraphyLogo.png",
-    link: "#",
+    link: "/departments/orthopedic",
   },
   {
     title: "Anesthesiology",
