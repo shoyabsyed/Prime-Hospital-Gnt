@@ -40,14 +40,14 @@ const servicesData = [
     description:
       "Compassionate pediatric care for your child’s health and development.",
     imageSrc: "Images/babyLogo.png",
-    link: "#",
+    link: "/departments/pediatrics",
   },
   {
     title: "ENT",
     description:
       "Advanced ENT care for complete ear, nose, and throat wellness.",
     imageSrc: "Images/entLogo.png",
-    link: "#",
+    link: "/departments/ent",
   },
   {
     title: "Ophthalmology",
@@ -66,14 +66,14 @@ const servicesData = [
     title: "Gynaecology",
     description: "Gynecology care for women’s health and wellness.",
     imageSrc: "Images/maternity.png",
-    link: "#",
+    link: "/departments/gynaecology",
   },
   {
     title: "Orthopedic",
     description:
       "Expert orthopedic care for optimal musculoskeletal health and recovery.",
     imageSrc: "Images/physicalTheraphyLogo.png",
-    link: "#",
+    link: "/departments/orthopedic",
   },
   {
     title: "Anesthesiology",

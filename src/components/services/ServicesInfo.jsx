@@ -40,7 +40,7 @@ const servicesData = [
     description:
       "Compassionate pediatric care for your child’s health and development.",
     imageSrc: "Images/babyLogo.png",
-    link: "#",
+    link: "/departments/pediatrics",
   },
 ];
 const AboutUs = ({
