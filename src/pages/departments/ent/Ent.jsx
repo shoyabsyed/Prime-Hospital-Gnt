@@ -1,4 +1,5 @@
 import BulletPoint from "../../../components/custom-components/BulletPoints";
+import SectionHeading from "../../../components/custom-components/SubHeading";
 import InnerBanner from "../../../components/InnerBanner/InnerBanner";
 import { EntData,
      EntPblmSymptoms
