@@ -5,9 +5,11 @@ import ServicesPage from "../pages/services/ServicesPage";
 import GeneralMedicinePage from "../pages/departments/generalMedicine/GeneralMedicinePage";
 import Cardiology from "../pages/departments/cardiology/Cardiology";
 import EntSymptoms from "../pages/departments/ent/Ent";
-import NeurosurgeryPage from "../pages/neurologist/NeurologistPage";
 import PulmonologyPage from "../pages/departments/pulmonology/pulmonologyPage";
 import UrologyPage from "../pages/departments/urology/UrologyPage";
+import NeurosurgeryPage from "../pages/departments/neurologist/NeurologistPage";
+import PediatricsPage from "../pages/departments/pediatrics/PediatricsPage";
+import GynaecologyPage from "../pages/departments/gynaecology/GynaecologyPage";
 
 const AppRouter = () => {
   return (
@@ -33,6 +35,12 @@ const AppRouter = () => {
         component={PulmonologyPage}
       />
       <Route exact path="/departments/urology" component={UrologyPage} />
+      <Route exact path="/departments/pediatrics" component={PediatricsPage} />
+      <Route
+        exact
+        path="/departments/gynaecology"
+        component={GynaecologyPage}
+      />
     </Switch>
   );
 };

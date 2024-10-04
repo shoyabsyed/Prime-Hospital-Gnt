@@ -1,7 +1,7 @@
-import AboutSection from "../../components/custom-components/AboutSection";
-import DiseasesSymptoms from "../../components/custom-components/DiseasesSymptoms";
-import SectionHeading from "../../components/custom-components/SubHeading";
-import InnerBanner from "../../components/InnerBanner/InnerBanner";
+import AboutSection from "../../../components/custom-components/AboutSection";
+import DiseasesSymptoms from "../../../components/custom-components/DiseasesSymptoms";
+import SectionHeading from "../../../components/custom-components/SubHeading";
+import InnerBanner from "../../../components/InnerBanner/InnerBanner";
 import { neurologyData, neurologySymptoms } from "./data";
 
 const NeurosurgeryPage = () => {
