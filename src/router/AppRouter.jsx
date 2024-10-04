@@ -8,6 +8,7 @@ import EntSymptoms from "../pages/departments/ent/Ent";
 import NeurosurgeryPage from "../pages/neurologist/NeurologistPage";
 import PulmonologyPage from "../pages/departments/pulmonology/pulmonologyPage";
 import UrologyPage from "../pages/departments/urology/UrologyPage";
+import Ophthalmology from "../pages/departments/ophthalmology/Ophthalmology";
 
 const AppRouter = () => {
   return (
@@ -33,6 +34,7 @@ const AppRouter = () => {
         component={PulmonologyPage}
       />
       <Route exact path="/departments/urology" component={UrologyPage} />
+      <Route exact path="/departments/ophthalmology" component={Ophthalmology} />
     </Switch>
   );
 };
