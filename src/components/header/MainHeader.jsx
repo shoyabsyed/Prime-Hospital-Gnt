@@ -13,9 +13,9 @@ const MainHeader = () => {
   const location = useLocation();
 
   const aboutLinks = [
-    { name: "Chairman", path: "/about/chairman" },
-    { name: "Hospital", path: "/about/hospital" },
-    { name: "Doctors Team", path: "/about/doctors-team" },
+    { name: "Chairman", path: "/chairman" },
+    { name: "Hospital", path: "/hospital" },
+    { name: "Doctors Team", path: "/doctors-team" },
   ];
 
   const departmentLinks = [
