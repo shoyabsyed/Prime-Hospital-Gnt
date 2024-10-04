@@ -8,6 +8,14 @@
   transition: all 0.40s;
 }
 
+.main-header {
+  position: sticky;
+  top: 0;
+  z-index: 50; 
+  background-color: white;
+  transition: transform 0.3s ease; 
+}
+
 /* Add this CSS to your stylesheet */
 .header-link {
   position: relative;
@@ -19,9 +27,9 @@
   content: '';
   position: absolute;
   width: 0;
-  height: 3px;
+  height: 2px;
   display: block;
-  margin-top: 10px;
+  margin-top: 2px;
   right: 0;
   background: dodgerblue;
   transition: width 0.3s ease;
