@@ -5,9 +5,12 @@ export default function InnerBanner({ imagePath = "", heading = "" }) {
   return (
     <section className="elementor-section">
       <div
-        className="relative bg-cover bg-center bg-no-repeat py-20 lg:py-28 text-center text-white font-bold"
+        className="relative bg-cover bg-center bg-no-repeat h-[400px] lg:h-[400px] flex justify-center items-center text-center text-white font-bold"
         style={{
           backgroundImage: `url(${imagePath})`,
+          backgroundSize: "cover", 
+          backgroundPosition: "center", 
+          backgroundRepeat: "no-repeat",
           fontSize: "50px",
           fontFamily: "Playfair Display, sans-serif",
         }}

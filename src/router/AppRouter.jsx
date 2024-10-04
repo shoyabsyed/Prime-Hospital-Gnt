@@ -12,6 +12,8 @@ import NeurosurgeryPage from "../pages/departments/neurologist/NeurologistPage";
 import PediatricsPage from "../pages/departments/pediatrics/PediatricsPage";
 import GynaecologyPage from "../pages/departments/gynaecology/GynaecologyPage";
 import OrthopedicPage from "../pages/departments/orthopedic/OrthopedicPage";
+import RadiologyPage from "../pages/departments/radiology/Radiology";
+import AnesthesiologyPage from "../pages/departments/anesthesiology/anesthesiologyPage";
 
 const AppRouter = () => {
   return (
@@ -45,6 +47,8 @@ const AppRouter = () => {
         component={GynaecologyPage}
       />
       <Route exact path="/departments/orthopedic" component={OrthopedicPage} />
+      <Route exact path="/departments/radiology" component={RadiologyPage} />
+      <Route exact path="/departments/anesthesiology" component={AnesthesiologyPage} />
     </Switch>
   );
 };
