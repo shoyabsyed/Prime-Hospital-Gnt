@@ -7,6 +7,8 @@ import {
   choosingOptionsData,
   keyProceduresList,
 } from "./data";
+import DiseasesSymptoms from "../../../components/custom-components/DiseasesSymptoms";
+import SectionHeading from "../../../components/custom-components/SubHeading";
 
 const ListItem = ({ item }) => (
   <div className="flex items-center gap-2 mb-2">
@@ -15,12 +17,6 @@ const ListItem = ({ item }) => (
     </div>
     <p className="text-lg">{item}</p>
   </div>
-);
-
-const SectionHeading = ({ title }) => (
-  <h1 className="text-4xl font-bold underline text-green-600 text-center">
-    {title}
-  </h1>
 );
 
 const Cardiology = () => {
@@ -67,24 +63,12 @@ const Cardiology = () => {
           </div>
         </section>
 
-        <SectionHeading title="When Would I Need a Cardiologist?" />
-        <p className="text-center text-xl">
-          You may require to see a best cardiologist in Andhra Pradesh if you
-          experience symptoms such as:
-        </p>
-        <div className="flex flex-col lg:flex-row md:flex-wrap items-center justify-center gap-6 mt-4">
-          {cardiologySymptoms.map((symptom, idx) => (
-            <div key={idx} className="flex flex-col items-center">
-              <img
-                src={symptom.logo}
-                alt={`${symptom.symptom}-logo`}
-                width={90}
-              />
-              <h2 className="font-bold text-center">{symptom.symptom}</h2>
-            </div>
-          ))}
-        </div>
-
+        <DiseasesSymptoms
+          descrption="You may require to see a best cardiologist in Andhra Pradesh if you
+          experience symptoms such as"
+          title="When Would I Need a Cardiologist?"
+          diseasesData={cardiologySymptoms}
+        />
         <SectionHeading title="Why Choose Us?" />
         {choosingOptionsData.map((option, idx) => (
           <div key={idx} className="mt-4">

@@ -44,12 +44,20 @@ const MainHeader = () => {
   const renderDropdownLinks = (links) =>
     links.map((link, index) => (
       <li key={index}>
-        <Link to={link.path} className="block px-4 py-2 hover:text-sky-500">
+        <Link
+          to={link.path}
+          className="block px-4 py-2 hover:text-sky-500"
+          onClick={() => setMenuOpen(false)}
+        >
           <IoMdRemove className="inline-block mr-2 md:hidden" />
           {link.name}
         </Link>
       </li>
     ));
+
+  const isSubmenuActive = (links) => {
+    return links.some((link) => location.pathname === link.path);
+  };
 
   useEffect(() => {
     let lastScrollY = window.scrollY;
@@ -94,7 +102,9 @@ const MainHeader = () => {
           <div className="relative group">
             <button
               onClick={() => setAboutOpen(!aboutOpen)}
-              className="tracking-4 header-dropdown-link flex font-semibold items-center gap-2 hover:text-sky-500"
+              className={`tracking-4 header-dropdown-link flex font-semibold items-center gap-2 hover:text-sky-500 ${
+                isSubmenuActive(aboutLinks) ? "text-blue-500" : ""
+              }`}
             >
               ABOUT <IoMdArrowDropdown />
             </button>
@@ -110,7 +120,9 @@ const MainHeader = () => {
           <div className="relative group">
             <button
               onClick={() => setDepartmentsOpen(!departmentsOpen)}
-              className="tracking-4 header-dropdown-link font-semibold flex items-center gap-2 hover:text-sky-500"
+              className={`tracking-4 header-dropdown-link font-semibold flex items-center gap-2 hover:text-sky-500 ${
+                isSubmenuActive(departmentLinks) ? "text-blue-500" : ""
+              }`}
             >
               DEPARTMENTS <IoMdArrowDropdown />
             </button>
@@ -145,7 +157,9 @@ const MainHeader = () => {
           <div className="relative group">
             <button
               onClick={() => setMoreOpen(!moreOpen)}
-              className="tracking-4 header-dropdown-link font-semibold flex items-center gap-2 hover:text-sky-500"
+              className={`tracking-4 header-dropdown-link font-semibold flex items-center gap-2 hover:text-sky-500 ${
+                isSubmenuActive(moreLinks) ? "text-blue-500" : ""
+              }`}
             >
               MORE <IoMdArrowDropdown />
             </button>
@@ -190,6 +204,7 @@ const MainHeader = () => {
               className={`block py-2 hover:text-sky-500 ${
                 location.pathname === "/" ? "text-blue-500" : ""
               }`}
+              onClick={() => setMenuOpen(false)}
             >
               HOME
             </Link>
@@ -197,7 +212,9 @@ const MainHeader = () => {
           <li>
             <button
               onClick={() => setAboutOpen(!aboutOpen)}
-              className="flex gap-2 items-center w-full py-2 hover:text-sky-500"
+              className={`flex gap-2 items-center w-full py-2 hover:text-sky-500 ${
+                isSubmenuActive(aboutLinks) ? "text-blue-500" : ""
+              }`}
             >
               ABOUT <IoMdArrowDropdown />
             </button>
@@ -212,7 +229,9 @@ const MainHeader = () => {
           <li>
             <button
               onClick={() => setDepartmentsOpen(!departmentsOpen)}
-              className="flex gap-2 items-center w-full py-2 hover:text-sky-500"
+              className={`flex gap-2 items-center w-full py-2 hover:text-sky-500 ${
+                isSubmenuActive(departmentLinks) ? "text-blue-500" : ""
+              }`}
             >
               DEPARTMENTS <IoMdArrowDropdown />
             </button>
@@ -230,6 +249,7 @@ const MainHeader = () => {
               className={`block py-2 hover:text-sky-500 ${
                 location.pathname === "/facilities" ? "text-blue-500" : ""
               }`}
+              onClick={() => setMenuOpen(false)}
             >
               FACILITIES
             </Link>
@@ -240,6 +260,7 @@ const MainHeader = () => {
               className={`block py-2 hover:text-sky-500 ${
                 location.pathname === "/gallery" ? "text-blue-500" : ""
               }`}
+              onClick={() => setMenuOpen(false)} // Close menu after navigation
             >
               GALLERY
             </Link>
@@ -247,7 +268,9 @@ const MainHeader = () => {
           <li>
             <button
               onClick={() => setMoreOpen(!moreOpen)}
-              className="flex gap-2 items-center w-full py-2 hover:text-sky-500"
+              className={`flex gap-2 items-center w-full py-2 hover:text-sky-500 ${
+                isSubmenuActive(moreLinks) ? "text-blue-500" : ""
+              }`}
             >
               MORE <IoMdArrowDropdown />
             </button>
@@ -265,6 +288,7 @@ const MainHeader = () => {
               className={`block py-2 hover:text-sky-500 ${
                 location.pathname === "/contact" ? "text-blue-500" : ""
               }`}
+              onClick={() => setMenuOpen(false)}
             >
               CONTACT
             </Link>

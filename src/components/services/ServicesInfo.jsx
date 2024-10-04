@@ -20,20 +20,20 @@ const servicesData = [
     title: "Neurosurgery",
     description: "Expert neurosurgery for advanced brain and spine care.",
     imageSrc: "Images/brainLogo.png",
-    link: "#",
+    link: "/departments/neurosurgery",
   },
   {
     title: "Pulmonology",
     description: "Specialized pulmonology care for optimal respiratory health.",
     imageSrc: "Images/lungsLogo.png",
-    link: "#",
+    link: "/departments/pulmonology",
   },
   {
     title: "Urology",
     description:
       "Advanced urology care for comprehensive urinary and reproductive health.",
     imageSrc: "Images/urologyLogo.png",
-    link: "#",
+    link: "/departments/urology",
   },
   {
     title: "Pediatrics",

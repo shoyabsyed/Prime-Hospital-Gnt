@@ -5,6 +5,9 @@ import ServicesPage from "../pages/services/ServicesPage";
 import GeneralMedicinePage from "../pages/departments/generalMedicine/GeneralMedicinePage";
 import Cardiology from "../pages/departments/cardiology/Cardiology";
 import EntSymptoms from "../pages/departments/ent/Ent";
+import NeurosurgeryPage from "../pages/neurologist/NeurologistPage";
+import PulmonologyPage from "../pages/departments/pulmonology/pulmonologyPage";
+import UrologyPage from "../pages/departments/urology/UrologyPage";
 
 const AppRouter = () => {
   return (
@@ -19,6 +22,17 @@ const AppRouter = () => {
       />
       <Route exact path="/departments/cardiology" component={Cardiology} />
       <Route exact path="/departments/ent" component={EntSymptoms} />
+      <Route
+        exact
+        path="/departments/neurosurgery"
+        component={NeurosurgeryPage}
+      />
+      <Route
+        exact
+        path="/departments/pulmonology"
+        component={PulmonologyPage}
+      />
+      <Route exact path="/departments/urology" component={UrologyPage} />
     </Switch>
   );
 };
