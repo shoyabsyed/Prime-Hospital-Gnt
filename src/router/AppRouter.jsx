@@ -16,6 +16,7 @@ import RadiologyPage from "../pages/departments/radiology/Radiology";
 import AnesthesiologyPage from "../pages/departments/anesthesiology/anesthesiologyPage";
 import CardiothoracicPage from "../pages/departments/cardiothoracic/CardiothoracicPage";
 import Chairman from "../pages/about/chairman/Chairman";
+import Testimonals from "../pages/more/Testimonals";
 import GalleryPage from "../pages/gallery/GalleryPage";
 import FacilitiesPage from "../pages/facilities/FacilitiesPage";
 
@@ -67,6 +68,7 @@ const AppRouter = () => {
         component={CardiothoracicPage}
       />
       <Route exact path="/chairman" component={Chairman} />
+      <Route exact path="/testimonials" component={Testimonals} />
       <Route exact path="/gallery" component={GalleryPage} />
       <Route exact path="/facilities" component={FacilitiesPage} />
     </Switch>
