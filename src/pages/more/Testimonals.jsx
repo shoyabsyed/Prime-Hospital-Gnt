@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import TestimonialCard from "./TestimonialCard";
 import { TestimonialsData } from "./data";
 import InnerBanner from "../../components/InnerBanner/InnerBanner";
 import PatientsFeedBack from "../../components/custom-components/Stepper";
 
 const Testimonals = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div>
       <InnerBanner heading="Testimonials" text-bold />

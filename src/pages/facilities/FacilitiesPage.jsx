@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { TiTick } from "react-icons/ti";
 import { motion, useAnimation, useInView } from "framer-motion"; // I
 import { facilities } from "./data";
@@ -16,6 +16,10 @@ const FacilitiesPage = () => {
       controls.start({ opacity: 1, y: 0 });
     }
   }, [inView, controls]);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div className="relative bg-green-700 text-white pt-16">

@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import InnerBanner from "../../components/InnerBanner/InnerBanner";
 import AppointmentInfo from "../../components/appointment/AppointmentInfo";
 import AppointmentContact from "../../components/contact/AppointmentContact";
 
 function Hospital() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div>
       <section>

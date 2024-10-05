@@ -1,8 +1,13 @@
+import { useEffect } from "react";
 import InnerBanner from "../../components/InnerBanner/InnerBanner";
 import ContactForm from "../../components/contact/ContactForm";
 import Location from "../../components/contact/Location";
 
 const ContactPage = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div>
       <InnerBanner

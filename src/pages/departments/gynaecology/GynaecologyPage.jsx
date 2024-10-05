@@ -1,8 +1,13 @@
+import { useEffect } from "react";
 import DiseasesSymptoms from "../../../components/custom-components/DiseasesSymptoms";
 import InnerBanner from "../../../components/InnerBanner/InnerBanner";
 import { gynaecologySymptoms } from "./data";
 
 const GynaecologyPage = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div>
       <InnerBanner

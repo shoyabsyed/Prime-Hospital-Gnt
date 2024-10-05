@@ -9,6 +9,7 @@ import {
 } from "./data";
 import DiseasesSymptoms from "../../../components/custom-components/DiseasesSymptoms";
 import SectionHeading from "../../../components/custom-components/SubHeading";
+import { useEffect } from "react";
 
 const ListItem = ({ item }) => (
   <div className="flex items-center gap-2 mb-2">
@@ -23,6 +24,10 @@ const Cardiology = () => {
   const midIndex = Math.ceil(keyProceduresList.length / 2);
   const leftList = keyProceduresList.slice(0, midIndex);
   const rightList = keyProceduresList.slice(midIndex);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div>

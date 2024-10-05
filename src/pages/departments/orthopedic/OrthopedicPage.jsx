@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import BulletPoint from "../../../components/custom-components/BulletPoints";
 import DiseasesSymptoms from "../../../components/custom-components/DiseasesSymptoms";
 import SectionHeading from "../../../components/custom-components/SubHeading";
@@ -5,6 +6,10 @@ import InnerBanner from "../../../components/InnerBanner/InnerBanner";
 import { orthopedicData, orthoprdicSymptoms } from "./data";
 
 const OrthopedicPage = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div>
       <InnerBanner imagePath="/Images/bone1.png" heading="Orthopedic" />

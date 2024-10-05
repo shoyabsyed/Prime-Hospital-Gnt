@@ -1,9 +1,14 @@
+import { useEffect } from "react";
 import BulletPoint from "../../../components/custom-components/BulletPoints";
 import SectionHeading from "../../../components/custom-components/SubHeading";
 import InnerBanner from "../../../components/InnerBanner/InnerBanner";
 import { EntData, EntPblmSymptoms } from "./data";
 
 const EntSymptoms = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div>
       <InnerBanner imagePath="/Images/entImage.png" heading="ENT" />

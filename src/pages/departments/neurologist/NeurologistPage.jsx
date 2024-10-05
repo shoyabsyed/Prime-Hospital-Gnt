@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import AboutSection from "../../../components/custom-components/AboutSection";
 import DiseasesSymptoms from "../../../components/custom-components/DiseasesSymptoms";
 import SectionHeading from "../../../components/custom-components/SubHeading";
@@ -5,6 +6,10 @@ import InnerBanner from "../../../components/InnerBanner/InnerBanner";
 import { neurologyData, neurologySymptoms } from "./data";
 
 const NeurosurgeryPage = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div>
       <InnerBanner heading="Neurosurgery" imagePath="/Images/brainBanner.png" />

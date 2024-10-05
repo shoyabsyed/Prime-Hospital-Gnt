@@ -1,9 +1,14 @@
+import { useEffect } from "react";
 import BulletPoint from "../../../components/custom-components/BulletPoints";
 import SectionHeading from "../../../components/custom-components/SubHeading";
 import InnerBanner from "../../../components/InnerBanner/InnerBanner";
 import { pediatricsData } from "./data";
 
 const PediatricsPage = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div>
       <InnerBanner heading="Pediatrics" imagePath="/Images/babyBanner.png" />

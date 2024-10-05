@@ -1,8 +1,13 @@
+import { useEffect } from "react";
 import BulletPoint from "../../../components/custom-components/BulletPoints";
 import InnerBanner from "../../../components/InnerBanner/InnerBanner";
 import { generalMedicineData } from "./data";
 
 const GeneralMedicinePage = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="bg-white">
       <InnerBanner
