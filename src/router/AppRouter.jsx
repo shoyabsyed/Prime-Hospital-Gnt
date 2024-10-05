@@ -16,6 +16,8 @@ import RadiologyPage from "../pages/departments/radiology/Radiology";
 import AnesthesiologyPage from "../pages/departments/anesthesiology/anesthesiologyPage";
 import CardiothoracicPage from "../pages/departments/cardiothoracic/CardiothoracicPage";
 import Chairman from "../pages/about/chairman/Chairman";
+import GalleryPage from "../pages/gallery/GalleryPage";
+import FacilitiesPage from "../pages/facilities/FacilitiesPage";
 
 const AppRouter = () => {
   return (
@@ -54,9 +56,19 @@ const AppRouter = () => {
       />
       <Route exact path="/departments/orthopedic" component={OrthopedicPage} />
       <Route exact path="/departments/radiology" component={RadiologyPage} />
-      <Route exact path="/departments/anesthesiology" component={AnesthesiologyPage} />
-      <Route exact path="/departments/cardiothoracic-surgery" component={CardiothoracicPage} />
+      <Route
+        exact
+        path="/departments/anesthesiology"
+        component={AnesthesiologyPage}
+      />
+      <Route
+        exact
+        path="/departments/cardiothoracic-surgery"
+        component={CardiothoracicPage}
+      />
       <Route exact path="/chairman" component={Chairman} />
+      <Route exact path="/gallery" component={GalleryPage} />
+      <Route exact path="/facilities" component={FacilitiesPage} />
     </Switch>
   );
 };
