@@ -1,5 +1,5 @@
 import React from 'react';
-import { FiSearch } from 'react-icons/fi'; // Import the search icon
+import { FiSearch } from 'react-icons/fi'; 
 
 const SearchBar = () => {
     return (
