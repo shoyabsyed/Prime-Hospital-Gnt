@@ -9,6 +9,7 @@ const MainHeader = () => {
   const [moreOpen, setMoreOpen] = useState(false);
   const [isHeaderVisible, setIsHeaderVisible] = useState(true);
   const [isScrollingUp, setIsScrollingUp] = useState(true);
+  const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth <= 768);
 
   const location = useLocation();
 
@@ -61,17 +62,35 @@ const MainHeader = () => {
   };
 
   useEffect(() => {
+    const handleResize = () => {
+      setIsSmallScreen(window.innerWidth <= 768);
+    };
+
+    window.addEventListener("resize", handleResize);
+
     let lastScrollY = window.scrollY;
 
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
 
-      if (currentScrollY > lastScrollY && currentScrollY > 200) {
-        setIsScrollingUp(false);
-        setIsHeaderVisible(false);
-      } else if (currentScrollY < lastScrollY) {
-        setIsScrollingUp(true);
-        setIsHeaderVisible(true);
+      if (isSmallScreen) {
+        // For small screens, ensure the header sticks to the top
+        if (currentScrollY > lastScrollY && currentScrollY > 50) {
+          setIsScrollingUp(false);
+          setIsHeaderVisible(false);
+        } else if (currentScrollY < lastScrollY) {
+          setIsScrollingUp(true);
+          setIsHeaderVisible(true);
+        }
+      } else {
+        // For larger screens, normal behavior
+        if (currentScrollY > lastScrollY && currentScrollY > 200) {
+          setIsScrollingUp(false);
+          setIsHeaderVisible(false);
+        } else if (currentScrollY < lastScrollY) {
+          setIsScrollingUp(true);
+          setIsHeaderVisible(true);
+        }
       }
 
       lastScrollY = currentScrollY;
@@ -81,13 +100,18 @@ const MainHeader = () => {
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleResize);
     };
-  }, []);
+  }, [isSmallScreen]);
 
   return (
     <header
       className={`main-header w-full bg-white sticky top-0 py-4 shadow-md transition-transform duration-300 z-50 ${
-        isHeaderVisible && isScrollingUp ? "translate-y-0" : "-translate-y-full"
+        isHeaderVisible && isScrollingUp
+          ? "translate-y-0"
+          : isSmallScreen
+          ? "translate-y-0"
+          : "-translate-y-full"
       }`}
     >
       <div className="container mx-auto">
