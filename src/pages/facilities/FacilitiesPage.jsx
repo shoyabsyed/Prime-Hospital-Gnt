@@ -66,7 +66,7 @@ const FacilitiesPage = () => {
             <h3 className="text-2xl font-bold text-center text-green-600 mb-2">
               {facility.title}
             </h3>
-            <p className="text-xl text-center text-black flex-grow">
+            <p className="text-lg md:text-xl text-center text-black flex-grow ">
               {facility.description}
             </p>
           </div>
