@@ -240,7 +240,7 @@ const MainHeader = () => {
         </div>
 
         <div
-          className={`lg:hidden transition-all duration-300 ease-in-out p-4 overflow-y-auto ${
+          className={`lg:hidden transition-all duration-300 ease-in-out p-4${
             menuOpen ? "max-h-screen" : "max-h-0"
           } overflow-hidden`}
         >
