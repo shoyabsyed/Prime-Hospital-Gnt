@@ -19,6 +19,9 @@ import Chairman from "../pages/about/chairman/Chairman";
 import Testimonals from "../pages/more/Testimonals";
 import GalleryPage from "../pages/gallery/GalleryPage";
 import FacilitiesPage from "../pages/facilities/FacilitiesPage";
+import Hospital from "../pages/hospital/Hospital";
+import AboutUs from "../components/services/ServicesInfo";
+import AboutTeam from "../components/about/AboutTeam";
 
 const AppRouter = () => {
   return (
@@ -71,6 +74,8 @@ const AppRouter = () => {
       <Route exact path="/testimonials" component={Testimonals} />
       <Route exact path="/gallery" component={GalleryPage} />
       <Route exact path="/facilities" component={FacilitiesPage} />
+      <Route exact path="/hospital" component={Hospital} />
+      <Route exact path="/doctors-team" component={AboutTeam} />
     </Switch>
   );
 };

@@ -54,8 +54,8 @@ const AppointmentContact = () => {
       </section>
 
       <section className="w-full sm:w-80 md:w-1/2 lg:w-96 text-white flex flex-col gap-4 relative z-10 text-center md:text-left order-1 md:order-2">
-        <h1 className="text-lg sm:text-xl md:text-2xl font-bold">
-          Healing Thousands of Lives.
+        <h1 className="text-lg sm:text-xl md:text-4xl font-bold">
+          Healing Thousands of Life.
         </h1>
         <p className="text-sm sm:text-base">
           We are one of the best hospitals in Guntur, with over 7+ years of

@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 
 export default function InnerBanner({ imagePath = "", heading = "" }) {
+    console.log(imagePath)
   return (
     <section className="elementor-section">
       <div
