@@ -10,13 +10,17 @@ import PatientsFeedBack from "../../components/custom-components/Stepper";
 import Footer from "../../components/footer/Footer";
 import SubFooter from "../../components/footer/SubFooter";
 import Chairman from "../../components/about/Chairman";
+import AboutTeam from "../../components/about/AboutTeam";
+import Hospital from "../hospital/Hospital";
 
 const HomePage = () => {
   return (
     <div>
-      <Chairman/>
-      <Header />
-      <MainHeader />
+      <Hospital />
+      <AboutTeam />
+      <Chairman />
+      {/* <Header />
+      <MainHeader /> */}
       <Banner />
       <Services />
       <AboutOurServices />
