@@ -38,7 +38,7 @@ const MainHeader = () => {
   ];
 
   const moreLinks = [
-    { name: "Testimonials", path: "/more/testimonials" },
+    { name: "Testimonials", path: "/testimonials" },
     { name: "Blog", path: "/more/blog" },
   ];
 
