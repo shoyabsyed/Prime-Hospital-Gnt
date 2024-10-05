@@ -18,7 +18,7 @@ function AboutTeam() {
 
     {
       name: "Dr. K. SAI RAJA SEKHAR - MBBS, MD RESPIRATORY MEDICINE",
-      img: "/Images/RajasekharImg.png",
+      img: "/Images/RajaSekharImg.png",
       details: " CONSULTANT INTERVENTIONAL PULMONOLOGIST",
     },
 
@@ -78,7 +78,7 @@ function AboutTeam() {
     },
     {
       name: "Dr. N. KRUSHNA TEJA - MBBS, MD Radiology, FVIR",
-      img: "/Images/KrushnatejaImg.png",
+      img: "/Images/KrushnaTejaImg.png",
       details: "Consultant Interventional Radiologist",
     },
     {
