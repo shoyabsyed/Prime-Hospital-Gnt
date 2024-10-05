@@ -11,13 +11,19 @@ const DiseasesSymptoms = ({
       <p className="text-center text-xl">{descrption}:</p>
       <div className="flex flex-col lg:flex-row md:flex-wrap items-center justify-center gap-6 mt-4">
         {diseasesData.map((symptom, idx) => (
-          <div key={idx} className="flex flex-col items-center">
-            <img
-              src={symptom.logo}
-              alt={`${symptom.symptom}-logo`}
-              width={90}
-            />
-            <h2 className="font-bold text-center">{symptom.symptom}</h2>
+          <div
+            key={idx}
+            className="grid grid-rows-2 justify-center items-center w-40 gap-2"
+          >
+            <div className="h-[50%]">
+              <img
+                src={symptom.logo}
+                alt={`${symptom.symptom}-logo`}
+                width={90}
+                className="mx-auto h"
+              />
+            </div>
+            <h2 className="font-bold text-center h-[50%]">{symptom.symptom}</h2>
           </div>
         ))}
       </div>

@@ -17,11 +17,11 @@ const ContactForm = () => {
         </div>
         <div className="mb-4">
           <h1 className="text-xl font-bold flex items-center mb-1">Phone</h1>
-          <p>+91 9505544220</p>
+          <a href="tel:+91-9505544220">+91 9505544220</a>
         </div>
         <div>
           <h1 className="text-xl font-bold flex items-center mb-1">Email</h1>
-          <p>andhraprimeh@gmail.com</p>
+          <a href="mailto:andhraprimeh@gmail.com">andhraprimeh@gmail.com</a>
         </div>
       </section>
 
