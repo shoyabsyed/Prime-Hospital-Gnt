@@ -228,7 +228,9 @@ const MainHeader = () => {
 
         <div
           className={`lg:hidden transition-all duration-300 ease-in-out ${
-            menuOpen ? "max-h-screen" : "max-h-0 overflow-hidden"
+            menuOpen
+              ? "max-h-screen overflow-y-auto custom-scrollbar"
+              : "max-h-0 overflow-hidden"
           }`}
         >
           <ul className="flex flex-col items-start space-y-2 px-4 py-2 bg-white shadow-md">
