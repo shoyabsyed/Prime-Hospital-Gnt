@@ -20,7 +20,7 @@ const DiseasesSymptoms = ({
                 src={symptom.logo}
                 alt={`${symptom.symptom}-logo`}
                 width={90}
-                className="mx-auto h"
+                className="mx-auto"
               />
             </div>
             <h2 className="font-bold text-center h-[50%]">{symptom.symptom}</h2>

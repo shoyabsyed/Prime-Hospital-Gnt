@@ -20,6 +20,9 @@ import Testimonals from "../pages/more/Testimonals";
 import GalleryPage from "../pages/gallery/GalleryPage";
 import FacilitiesPage from "../pages/facilities/FacilitiesPage";
 import BlogPage from "../pages/more/Blog";
+import Hospital from "../pages/hospital/Hospital";
+import AboutUs from "../components/services/ServicesInfo";
+import AboutTeam from "../components/about/AboutTeam";
 
 const AppRouter = () => {
   return (
@@ -73,6 +76,8 @@ const AppRouter = () => {
       <Route exact path="/gallery" component={GalleryPage} />
       <Route exact path="/facilities" component={FacilitiesPage} />
       <Route exact path="/more/blog" component={BlogPage} />
+      <Route exact path="/hospital" component={Hospital} />
+      <Route exact path="/doctors-team" component={AboutTeam} />
     </Switch>
   );
 };

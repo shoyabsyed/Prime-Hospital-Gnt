@@ -4,45 +4,44 @@ import { Link, useLocation } from "react-router-dom";
 
 const MainHeader = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [dropdownState, setDropdownState] = useState({
-    aboutOpen: false,
-    departmentsOpen: false,
-    moreOpen: false,
-  });
+  const [aboutOpen, setAboutOpen] = useState(false);
+  const [departmentsOpen, setDepartmentsOpen] = useState(false);
+  const [moreOpen, setMoreOpen] = useState(false);
   const [isHeaderVisible, setIsHeaderVisible] = useState(true);
   const [isScrollingUp, setIsScrollingUp] = useState(true);
   const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth <= 768);
+
   const location = useLocation();
 
-  const links = {
-    aboutLinks: [
-      { name: "Chairman", path: "/chairman" },
-      { name: "Hospital", path: "/hospital" },
-      { name: "Doctors Team", path: "/doctors-team" },
-    ],
-    departmentLinks: [
-      { name: "General Medicine", path: "/departments/general-medicine" },
-      { name: "Cardiology", path: "/departments/cardiology" },
-      { name: "Neurosurgery", path: "/departments/neurosurgery" },
-      { name: "Pulmonology", path: "/departments/pulmonology" },
-      { name: "Urology", path: "/departments/urology" },
-      { name: "Gynaecology", path: "/departments/gynaecology" },
-      { name: "Pediatrics", path: "/departments/pediatrics" },
-      { name: "ENT", path: "/departments/ent" },
-      { name: "Ophthalmology", path: "/departments/ophthalmology" },
-      { name: "Radiology", path: "/departments/radiology" },
-      { name: "Orthopedic", path: "/departments/orthopedic" },
-      { name: "Anesthesiology", path: "/departments/anesthesiology" },
-      {
-        name: "Cardiology",
-        path: "/departments/cardiothoracic-surgery",
-      },
-    ],
-    moreLinks: [
-      { name: "Testimonials", path: "/more/testimonials" },
-      { name: "Blog", path: "/more/blog" },
-    ],
-  };
+  const aboutLinks = [
+    { name: "Chairman", path: "/chairman" },
+    { name: "Hospital", path: "/hospital" },
+    { name: "Doctors Team", path: "/doctors-team" },
+  ];
+
+  const departmentLinks = [
+    { name: "General Medicine", path: "/departments/general-medicine" },
+    { name: "Cardiology", path: "/departments/cardiology" },
+    { name: "Neurosurgery", path: "/departments/neurosurgery" },
+    { name: "Pulmonology", path: "/departments/pulmonology" },
+    { name: "Urology", path: "/departments/urology" },
+    { name: "Gynaecology", path: "/departments/gynaecology" },
+    { name: "Pediatrics", path: "/departments/pediatrics" },
+    { name: "ENT", path: "/departments/ent" },
+    { name: "Ophthalmology", path: "/departments/ophthalmology" },
+    { name: "Radiology", path: "/departments/radiology" },
+    { name: "Orthopedic", path: "/departments/orthopedic" },
+    { name: "Anesthesiology", path: "/departments/anesthesiology" },
+    {
+      name: "Cardiothoracic Surgery",
+      path: "/departments/cardiothoracic-surgery",
+    },
+  ];
+
+  const moreLinks = [
+    { name: "Testimonials", path: "/testimonials" },
+    { name: "Blog", path: "/more/blog" },
+  ];
 
   const renderDropdownLinks = (links) =>
     links.map((link, index) => (
@@ -62,13 +61,6 @@ const MainHeader = () => {
     return links.some((link) => location.pathname === link.path);
   };
 
-  const toggleDropdown = (dropdown) => {
-    setDropdownState((prev) => ({
-      ...prev,
-      [dropdown]: !prev[dropdown],
-    }));
-  };
-
   useEffect(() => {
     const handleResize = () => {
       setIsSmallScreen(window.innerWidth <= 768);
@@ -82,6 +74,7 @@ const MainHeader = () => {
       const currentScrollY = window.scrollY;
 
       if (isSmallScreen) {
+        // For small screens, ensure the header sticks to the top
         if (currentScrollY > lastScrollY && currentScrollY > 50) {
           setIsScrollingUp(false);
           setIsHeaderVisible(false);
@@ -90,6 +83,7 @@ const MainHeader = () => {
           setIsHeaderVisible(true);
         }
       } else {
+        // For larger screens, normal behavior
         if (currentScrollY > lastScrollY && currentScrollY > 200) {
           setIsScrollingUp(false);
           setIsHeaderVisible(false);
@@ -113,8 +107,6 @@ const MainHeader = () => {
   return (
     <header
       className={`main-header w-full bg-white sticky top-0 py-4 shadow-md transition-transform duration-300 z-50 ${
-        menuOpen && "overflow-x-hidden"
-      } ${
         isHeaderVisible && isScrollingUp
           ? "translate-y-0"
           : isSmallScreen
@@ -139,89 +131,84 @@ const MainHeader = () => {
 
             <div className="relative group">
               <button
-                onClick={() => toggleDropdown("aboutOpen")}
-                className={`tracking-4 header-dropdown-link font-semibold flex items-center gap-2 hover:text-sky-500 ${
-                  isSubmenuActive(links.aboutLinks) ? "text-blue-500" : ""
+                onClick={() => setAboutOpen(!aboutOpen)}
+                className={`tracking-4 header-dropdown-link flex font-semibold items-center gap-2 hover:text-sky-500 ${
+                  isSubmenuActive(aboutLinks) ? "text-blue-500" : ""
                 }`}
               >
                 ABOUT <IoMdArrowDropdown />
               </button>
               <div
                 className={`absolute ${
-                  dropdownState.aboutOpen ? "block" : "hidden"
-                } dropdown-menu bg-white shadow-lg rounded-md mt-1 transition-all duration-300 ease-in-out w-40`}
+                  aboutOpen ? "block" : "hidden"
+                } dropdown-menu bg-white shadow-lg rounded-md w-36 mt-1 transition-all duration-300 ease-in-out`}
               >
                 <ul className="py-2 w-full">
-                  {renderDropdownLinks(links.aboutLinks)}
+                  {renderDropdownLinks(aboutLinks)}
                 </ul>
               </div>
             </div>
 
             <div className="relative group">
               <button
-                onClick={() => toggleDropdown("departmentsOpen")}
+                onClick={() => setDepartmentsOpen(!departmentsOpen)}
                 className={`tracking-4 header-dropdown-link font-semibold flex items-center gap-2 hover:text-sky-500 ${
-                  isSubmenuActive(links.departmentLinks) ? "text-blue-500" : ""
+                  isSubmenuActive(departmentLinks) ? "text-blue-500" : ""
                 }`}
               >
                 DEPARTMENTS <IoMdArrowDropdown />
               </button>
               <div
                 className={`absolute ${
-                  dropdownState.departmentsOpen ? "block" : "hidden"
-                } dropdown-menu bg-white shadow-lg rounded-md mt-1 transition-all duration-300 ease-in-out w-40`}
+                  departmentsOpen ? "block" : "hidden"
+                } dropdown-menu bg-white shadow-lg rounded-md w-52 mt-1 transition-all duration-300 ease-in-out`}
               >
                 <ul className="py-2 w-full">
-                  {renderDropdownLinks(links.departmentLinks)}
+                  {renderDropdownLinks(departmentLinks)}
                 </ul>
               </div>
             </div>
 
             <Link
+              to="/facilities"
+              className={`tracking-4 header-link font-semibold hover:text-sky-500 ${
+                location.pathname === "/facilities" ? "text-blue-500" : ""
+              }`}
+            >
+              FACILITIES
+            </Link>
+            <Link
               to="/gallery"
               className={`tracking-4 header-link font-semibold hover:text-sky-500 ${
-                location.pathname === "/gallery"
-                  ? "text-blue-500"
-                  : "text-black hover:text-sky-500"
+                location.pathname === "/gallery" ? "text-blue-500" : ""
               }`}
             >
               GALLERY
             </Link>
 
-            <Link
-              to="/facilities"
-              className={`tracking-4 header-link font-semibold hover:text-sky-500 ${
-                location.pathname === "/facilities"
-                  ? "text-blue-500"
-                  : "text-black hover:text-sky-500"
-              }`}
-            >
-              FACILITIES
-            </Link>
-
             <div className="relative group">
               <button
-                onClick={() => toggleDropdown("moreOpen")}
+                onClick={() => setMoreOpen(!moreOpen)}
                 className={`tracking-4 header-dropdown-link font-semibold flex items-center gap-2 hover:text-sky-500 ${
-                  isSubmenuActive(links.moreLinks) ? "text-blue-500" : ""
+                  isSubmenuActive(moreLinks) ? "text-blue-500" : ""
                 }`}
               >
                 MORE <IoMdArrowDropdown />
               </button>
               <div
                 className={`absolute ${
-                  dropdownState.moreOpen ? "block" : "hidden"
-                } dropdown-menu bg-white shadow-lg rounded-md mt-1 transition-all duration-300 ease-in-out w-40`}
+                  moreOpen ? "block" : "hidden"
+                } dropdown-menu bg-white shadow-lg rounded-md w-32 mt-1 transition-all duration-300 ease-in-out`}
               >
                 <ul className="py-2 w-full">
-                  {renderDropdownLinks(links.moreLinks)}
+                  {renderDropdownLinks(moreLinks)}
                 </ul>
               </div>
             </div>
 
             <Link
               to="/contact"
-              className={`tracking-4 header-link font-semibold hover:text-sky-500 ${
+              className={`tracking-4 header-link hover font-semibold  ${
                 location.pathname === "/contact"
                   ? "text-blue-500"
                   : "text-black hover:text-sky-500"
@@ -240,11 +227,13 @@ const MainHeader = () => {
         </div>
 
         <div
-          className={`lg:hidden transition-all duration-300 ease-in-out p-4${
-            menuOpen ? "max-h-screen" : "max-h-0"
-          } overflow-hidden`}
+          className={`lg:hidden transition-all duration-300 ease-in-out ${
+            menuOpen
+              ? "max-h-screen overflow-y-auto custom-scrollbar"
+              : "max-h-0 overflow-hidden"
+          }`}
         >
-          <ul className="flex flex-col mt-4">
+          <ul className="flex flex-col items-start space-y-2 px-4 py-2 bg-white shadow-md">
             <li>
               <Link
                 to="/"
@@ -256,58 +245,40 @@ const MainHeader = () => {
                 HOME
               </Link>
             </li>
-
-            {/* About Dropdown for Mobile */}
             <li>
               <button
-                onClick={() => toggleDropdown("aboutOpen")}
-                className={`block py-2 hover:text-sky-500 flex justify-between w-full ${
-                  isSubmenuActive(links.aboutLinks) ? "text-blue-500" : ""
+                onClick={() => setAboutOpen(!aboutOpen)}
+                className={`flex gap-2 items-center w-full py-2 hover:text-sky-500 ${
+                  isSubmenuActive(aboutLinks) ? "text-blue-500" : ""
                 }`}
               >
                 ABOUT <IoMdArrowDropdown />
               </button>
               <ul
-                className={`pl-4 ${
-                  dropdownState.aboutOpen ? "block" : "hidden"
+                className={`pl-4 transition-all duration-300 ease-in-out ${
+                  aboutOpen ? "block" : "hidden"
                 }`}
               >
-                {renderDropdownLinks(links.aboutLinks)}
+                {renderDropdownLinks(aboutLinks)}
               </ul>
             </li>
-
-            {/* Departments Dropdown for Mobile */}
             <li>
               <button
-                onClick={() => toggleDropdown("departmentsOpen")}
-                className={`block py-2 hover:text-sky-500 flex justify-between w-full ${
-                  isSubmenuActive(links.departmentLinks) ? "text-blue-500" : ""
+                onClick={() => setDepartmentsOpen(!departmentsOpen)}
+                className={`flex gap-2 items-center w-full py-2 hover:text-sky-500 ${
+                  isSubmenuActive(departmentLinks) ? "text-blue-500" : ""
                 }`}
               >
                 DEPARTMENTS <IoMdArrowDropdown />
               </button>
               <ul
-                className={`pl-4 ${
-                  dropdownState.departmentsOpen ? "block" : "hidden"
+                className={`pl-4 transition-all duration-300 ease-in-out ${
+                  departmentsOpen ? "block" : "hidden"
                 }`}
               >
-                {renderDropdownLinks(links.departmentLinks)}
+                {renderDropdownLinks(departmentLinks)}
               </ul>
             </li>
-
-            {/* Gallery and Facilities Links for Mobile */}
-            <li>
-              <Link
-                to="/gallery"
-                className={`block py-2 hover:text-sky-500 ${
-                  location.pathname === "/gallery" ? "text-blue-500" : ""
-                }`}
-                onClick={() => setMenuOpen(false)}
-              >
-                GALLERY
-              </Link>
-            </li>
-
             <li>
               <Link
                 to="/facilities"
@@ -319,26 +290,34 @@ const MainHeader = () => {
                 FACILITIES
               </Link>
             </li>
-
-            {/* More Dropdown for Mobile */}
+            <li>
+              <Link
+                to="/gallery"
+                className={`block py-2 hover:text-sky-500 ${
+                  location.pathname === "/gallery" ? "text-blue-500" : ""
+                }`}
+                onClick={() => setMenuOpen(false)}
+              >
+                GALLERY
+              </Link>
+            </li>
             <li>
               <button
-                onClick={() => toggleDropdown("moreOpen")}
-                className={`block py-2 hover:text-sky-500 flex justify-between w-full ${
-                  isSubmenuActive(links.moreLinks) ? "text-blue-500" : ""
+                onClick={() => setMoreOpen(!moreOpen)}
+                className={`flex gap-2 items-center w-full py-2 hover:text-sky-500 ${
+                  isSubmenuActive(moreLinks) ? "text-blue-500" : ""
                 }`}
               >
                 MORE <IoMdArrowDropdown />
               </button>
               <ul
-                className={`pl-4 ${
-                  dropdownState.moreOpen ? "block" : "hidden"
+                className={`pl-4 transition-all duration-300 ease-in-out ${
+                  moreOpen ? "block" : "hidden"
                 }`}
               >
-                {renderDropdownLinks(links.moreLinks)}
+                {renderDropdownLinks(moreLinks)}
               </ul>
             </li>
-
             <li>
               <Link
                 to="/contact"

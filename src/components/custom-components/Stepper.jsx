@@ -34,7 +34,7 @@ const steps = [
   },
 ];
 
-export default function PatientsFeedBack() {
+export default function PatientsFeedBack({ showHeading = true }) {
   const theme = useTheme();
   const [activeStep, setActiveStep] = React.useState(0);
   const maxSteps = steps.length;
@@ -74,11 +74,13 @@ export default function PatientsFeedBack() {
           width: "100%",
         }}
       >
-        <Typography className="text-center text-green-600 underline">
-          <span className="text-lg sm:text-2xl font-semibold">
-            {steps[activeStep].label}
-          </span>
-        </Typography>
+        {showHeading && (
+          <Typography className="text-center text-green-600 underline">
+            <span className="text-lg sm:text-2xl font-semibold">
+              {steps[activeStep].label}
+            </span>
+          </Typography>
+        )}
       </Paper>
 
       <Box
