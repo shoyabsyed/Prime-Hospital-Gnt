@@ -21,8 +21,7 @@ import GalleryPage from "../pages/gallery/GalleryPage";
 import FacilitiesPage from "../pages/facilities/FacilitiesPage";
 import BlogPage from "../pages/more/Blog";
 import Hospital from "../pages/hospital/Hospital";
-import AboutUs from "../components/services/ServicesInfo";
-import AboutTeam from "../components/about/AboutTeam";
+import AboutTeam from "../pages/about/doctorTeam/AboutTeam";
 
 const AppRouter = () => {
   return (
