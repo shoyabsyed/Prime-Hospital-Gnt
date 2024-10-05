@@ -3,7 +3,7 @@ import React from 'react';
 const Sidebar = () => {
     return (
         <div className="pt-10">
-            {/* Recent Comments */}
+         
             <div className="mb-6">
                 <h3 className="font-semibold text-xl mb-2">Recent Comments</h3>
                 <ul>
@@ -19,7 +19,7 @@ const Sidebar = () => {
                 </ul>
             </div>
 
-            {/* Archives */}
+         
             <div className="mb-6">
                 <h3 className="font-semibold text-xl   mb-2 pt-8">Archives</h3>
                 <ul>
@@ -36,7 +36,7 @@ const Sidebar = () => {
                 </ul>
             </div>
 
-            {/* Categories */}
+           
             <div>
                 <h3 className="font-semibold text-xl mb-2 pt-8">Categories</h3>
                 <ul>
